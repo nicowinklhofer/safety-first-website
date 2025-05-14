@@ -1,0 +1,19 @@
+﻿@using SPL_Diplom_Winki_Trippi_Sabi.Models
+@model IEnumerable<Service>
+
+<h2 class="text-center">Unsere Dienstleistungen</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white border-primary h-100">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Title" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

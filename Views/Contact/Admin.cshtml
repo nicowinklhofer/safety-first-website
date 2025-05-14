@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SPL_Diplom_Winki_Trippi_Sabi.Models.ContactMessage>
+@{
+    ViewData["Title"] = "Nachrichtenübersicht";
+}
+
+<h2>Nachrichtenübersicht</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Betreff</th>
+            <th>Nachricht</th>
+            <th>Gesendet am</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var msg in Model)
+        {
+                <tr>
+                    <td>@msg.Name</td>
+                    <td>@msg.Email</td>
+                    <td>@msg.Subject</td>
+                    <td>@msg.Message</td>
+                    <td>@msg.SentAt.ToString("g")</td>
+                </tr>
+        }
+    </tbody>
+</table>  

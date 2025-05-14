@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SPL_Diplom_Winki_Trippi_Sabi.props" />
+</Project>

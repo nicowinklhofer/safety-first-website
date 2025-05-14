@@ -1,0 +1,27 @@
+﻿@model EditUserRolesViewModel
+
+<h2>Rollen bearbeiten für @Model.Email</h2>
+
+<form asp-action="EditRoles" method="post">
+    <input type="hidden" asp-for="UserId" />
+
+    <table class="table">
+        <tr>
+            <th>Rolle</th>
+            <th>Hat Rolle?</th>
+        </tr>
+        @foreach (var role in Model.Roles)
+        {
+            <tr>
+                <td>@role.RoleName</td>
+                <td>
+                    <input type="checkbox" asp-for="@role.Selected" />
+                    <input type="hidden" name="Roles[@Model.Roles.IndexOf(role)].RoleName" value="@role.RoleName" />
+                </td>
+            </tr>
+        }
+    </table>
+
+    <button type="submit" class="btn btn-primary">Speichern</button>
+    <a asp-action="Index" class="btn btn-secondary">Abbrechen</a>
+</form>

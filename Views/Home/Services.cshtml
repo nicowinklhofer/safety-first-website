@@ -1,0 +1,23 @@
+﻿@using SPL_Diplom_Winki_Trippi_Sabi.Models
+
+
+@{
+    ViewData["Title"] = "Unsere Dienstleistungen";
+}
+
+<h2 class="text-center mt-5">Unsere Dienstleistungen</h2>
+<p class="text-center">Maßgeschneiderte Sicherheitslösungen für Ihr Zuhause und Unternehmen.</p>
+
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var service in Model)
+        {
+            <div class="col-md-4">
+                <div class="card text-center p-4 mb-4">
+                    <h5 class="card-title">@service.Title</h5>
+                    <p class="card-text">@service.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

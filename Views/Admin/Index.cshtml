@@ -1,0 +1,44 @@
+﻿@using SPL_Diplom_Winki_Trippi_Sabi.Models
+@model List<UserWithRolesViewModel>
+<h2 class="text-white">Benutzerverwaltung</h2>
+
+<table class="table">
+    <tr>
+        <th>E-Mail</th>
+        <th>Aktionen</th>
+        <th>Rollen</th>
+    </tr>
+@foreach (var user in Model)
+{
+    <tr>
+        <td>@user.Email</td>
+        <td>
+            <form asp-action="DeleteUser" method="post">
+                <input type="hidden" name="id" value="@user.Id" />
+                <button type="submit" class="btn btn-danger">🗑 Löschen</button>
+            </form>
+        </td>
+        <td>
+            <form asp-action="ChangeRole" method="post">
+                <input type="hidden" name="id" value="@user.Id" />
+                    <select name="newRole" class="form-select">
+                        @foreach (var role in (List<string>)ViewBag.AllRoles)
+                        {
+                            if (role == user.SelectedRole)
+                            {
+                    <option value="@role" selected="selected">@role</option>
+                            }
+                            else
+                            {
+                    <option value="@role">@role</option>
+                            }
+                        }
+    </select>
+
+                <button type="submit" class="btn btn-primary btn-sm mt-1">Speichern</button>
+            </form>
+        </td>
+    </tr>
+}
+</table>
+

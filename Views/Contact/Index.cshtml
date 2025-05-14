@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Kontakt";
+}
+
+<h2 class="text-center text-primary mb-4">Kontaktformular</h2>
+
+<form asp-action="Index" method="post" class="mx-auto" style="max-width: 600px;">
+    <div class="mb-3">
+        <label class="form-label text-white">Name</label>
+        <input type="text" name="Name" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label text-white">E-Mail</label>
+        <input type="email" name="Email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label text-white">Nachricht</label>
+        <textarea name="Message" class="form-control" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Absenden</button>
+</form>
+
+@if (ViewBag.MessageSent != null)
+{
+        <div class="alert alert-success text-center mt-4">@ViewBag.MessageSent</div>
+}

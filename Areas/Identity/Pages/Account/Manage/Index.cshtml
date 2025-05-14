@@ -1,0 +1,15 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profil";
+}
+
+<h2 class="text-primary">Benutzerprofil</h2>
+
+<p>Willkommen, @User.Identity.Name!</p>
+
+<ul>
+    <li><a asp-page="Email">E-Mail ändern</a></li>
+    <li><a asp-page="ChangePassword">Passwort ändern</a></li>
+    <li><a asp-page="TwoFactorAuthentication">2-Faktor-Authentifizierung</a></li>
+</ul>

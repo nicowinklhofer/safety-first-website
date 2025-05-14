@@ -1,0 +1,244 @@
+﻿/* 🌑 Dark Mode aktivieren */
+:root {
+    --background-color: #121212;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --primary-color: #4db8ff;
+    --secondary-color: #ffcc00;
+}
+
+/* Allgemeines Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌑 Navigation - Dunkel mit Glas-Effekt */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: var(--secondary-color) !important;
+    }
+
+/* 🌑 Hero-Bereich */
+.hero-section {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?security,technology') no-repeat center center;
+    position: relative;
+}
+body {
+    background: #0e0e0e;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Rest vom Code */
+
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+/* 🌑 Button Styles */
+.btn-custom {
+    background: var(--secondary-color);
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-custom:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+
+/* 🌑 Karten-Design (Neumorphismus) */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+/* 🌑 Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+/* 🌟 Seite mit Fade-In Animation laden */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 🌟 Sticky Navigation mit sanftem Schatten beim Scrollen */
+.navbar {
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    .navbar.scrolled {
+        background: rgba(0, 0, 0, 0.9) !important;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+/* 🌟 Hero-Text mit sanfter Slide-In Animation */
+.hero-section h1 {
+    animation: slideIn 1s ease-out;
+}
+
+.hero-section p {
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 🌟 Karten mit Hover-Animation */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+/* 🌟 Button mit Glow-Effekt beim Hover */
+.btn-custom {
+    background: var(--secondary-color);
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-custom::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.6s ease-in-out;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+    }
+
+    .btn-custom:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .btn-custom:hover {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: 0px 0px 20px rgba(77, 184, 255, 0.7);
+    }
+
+/* 🌟 Footer sanft einblenden */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
